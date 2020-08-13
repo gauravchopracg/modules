@@ -1,0 +1,16 @@
+To Whoever it may concern, the following to-do tasks has been shared with you with following message:
+
+{{ text_body }}
+
+List of tasks:
+{% for post in posts %}
+Task                    Status               Priority
+{{ post.body }} : {{ post.status }} - Priority : {{ post.priority}}
+{% endfor %}
+
+Alternatively, you can also find them by logging at the following link:
+
+https://todomagic.herokuapp.com
+
+Sincerely,
+The TodoMagic Team
