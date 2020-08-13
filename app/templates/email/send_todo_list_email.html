@@ -1,0 +1,17 @@
+<p>To Whoever it may concern, the following to-do tasks has been shared with you with following message:</p>
+
+<p> {{ text_body }}
+
+<p>
+    List of tasks:
+    {% for task in tasks %}
+    <div class="alert alert-info" role="alert">{{ task.body }} : {{ task.status }} - Priority : {{ task.priority}}
+    </div>
+    {% endfor %}
+</p>
+<p>Alternatively, you can also find them by logging at the following link:</p>
+
+<p>https://todomagic.herokuapp.com</p>
+
+<p>Sincerely,</p>
+<p>The TodoMagic Team</p>

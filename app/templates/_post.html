@@ -1,0 +1,21 @@
+	{% if post.status == 'Complete' %}
+	<div class="panel panel-success">
+		<div class="panel-heading"  style='text-decoration:line-through'>
+		{{ post.body }} : {{ post.status }}</div>
+		{% if post.author.id == g.user.id %}
+		<div class="panel-body">
+			<a href="{{ url_for('delete', id = post.id) }}">Delete</a>
+			<a href="{{ url_for('incomplete', id = post.id) }}">Incomplete</a>
+		</div>
+		{% endif %}
+	</div>
+	{% else %}
+    <div class="panel {{ post.color }}">
+        <div class="panel-heading"><a href="{{ url_for('complete', id = post.id) }}">
+        	<span class="glyphicon glyphicon-remove">
+        {{ post.body }} : {{ post.status }}</span></a></div>
+        {% if post.author.id == g.user.id %}
+        <div class="panel-body"><a href="{{ url_for('delete', id = post.id) }}">Delete</a></div>
+        {% endif %}
+    </div>
+	{% endif %}
